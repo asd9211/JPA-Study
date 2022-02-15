@@ -3,17 +3,32 @@ package com.example.jpastudy.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import lombok.Data;
-
-@Entity //Entity ¾î³ëÅ×ÀÌ¼ÇÀ» ÅëÇØ JPA°¡ Ã³À½ ·ÎµùÇÒ¶§, ÀÎ½ÄÇÏ°í °ü¸®.
-@Data
+@Entity //Entity ì–´ë…¸í…Œì´ì…˜ì„ í†µí•´ JPAê°€ ì²˜ìŒ ë¡œë”©í• ë•Œ, ì¸ì‹í•˜ê³  ê´€ë¦¬.
+@Table(name="Member") // ê°ì²´ì™€ ì‹¤ì œ Tableê³¼ ì´ë¦„ì´ ë‹¬ë¼ ë§¤í•‘í•´ì•¼í• ê²½ìš°
 public class Member {
 
-	@Id //PK¸¦ ¾Ë·ÁÁÖ´Â ¾î³ëÅ×ÀÌ¼Ç
+	@Id //PKë¥¼ ì•Œë ¤ì£¼ëŠ” ì–´ë…¸í…Œì´ì…˜
 	private Long id;
 
 	@Column(name = "userId")
 	private String name;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }
